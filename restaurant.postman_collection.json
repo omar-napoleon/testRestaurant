@@ -1,0 +1,105 @@
+{
+	"info": {
+		"_postman_id": "271ab686-baee-4b00-9abe-ea74d57e6ce4",
+		"name": "restaurant",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "authorization",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"username\": \"user\",\n    \"password\": \"password\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/auth",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"auth"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "create sales",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ1c2VyIiwiYXVkaWVuY2UiOiJ3ZWIiLCJjcmVhdGVkIjoxNTY0MzM5NTYwNzAyLCJleHAiOjE1NjQ5NDQzNjB9.r4wKHk_Kpd63QxquK44r_DPzTA4lMLbVYeqXJyCGwD4wu0tqAFXR51vvIJzejORxwpIxTSZLguvzO8twhQV81A",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"date\":\"2019-07-28\",\n\t\"time\":\"14:03:07.911584\",\n\t\"paymentType\":\"tdc\",\n\t\"amount\": 27.00,\n\t\"currencyType\": \"clp\",\n\t\"operationCode\": 1234\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/sales",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"sales"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get sales by date",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ1c2VyIiwiYXVkaWVuY2UiOiJ3ZWIiLCJjcmVhdGVkIjoxNTY0MzM5NTYwNzAyLCJleHAiOjE1NjQ5NDQzNjB9.r4wKHk_Kpd63QxquK44r_DPzTA4lMLbVYeqXJyCGwD4wu0tqAFXR51vvIJzejORxwpIxTSZLguvzO8twhQV81A",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8080/sales/date/2019-07-28",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"sales",
+						"date",
+						"2019-07-28"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
